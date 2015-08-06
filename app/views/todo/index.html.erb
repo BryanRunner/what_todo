@@ -1,0 +1,15 @@
+<div id="todo-list" class="list-group">
+  <% if current_user %>
+    <%= render partial: "todo/partials/item_li", collection: todos %>
+  <% else %>
+    <%= render partial: "todo/partials/welcome" %>
+  <% end %>
+</div>
+
+<div class="panel-footer">
+  <% if current_user %>
+    <%= render partial: "shared/logged_in" %>
+  <% else %>
+    <%= render partial: "shared/logged_out" %>
+  <% end %>
+</div>

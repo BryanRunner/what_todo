@@ -1,0 +1,10 @@
+<div class="panel-body">
+  <h2>Sign Up</h2>
+  <%= bootstrap_form_for @user, url: {action: "create"}, remote:true do |f| %>
+      <%= f.text_field :email, label: "email", placeholder: "email@example.com" %>
+      <%= f.password_field :password, label: "Password", placeholder: "password" %>
+      <%= f.password_field :password_confirmation, label: "Confirm Password" %>
+    <a class="btn btn-primary btn-back" href="javascript:void(0)">Cancel</a>
+    <%= submit_tag("Create", class: 'btn btn-success btn-create') %>
+  <% end %>
+</div>

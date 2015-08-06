@@ -1,0 +1,10 @@
+<div class="panel-body">
+  <h2>Edit Item</h2>
+  <%= bootstrap_form_for @todo, url: {action: "update"}, remote:true do |f| %>
+    <%= f.text_field(:title) %>
+    <%= f.text_area(:note) %>
+    <%= f.datetime_local_field(:due_date) %>
+    <%= link_to 'Cancel', todo_path(@todo.id), class: "btn btn-primary", remote:true %>
+    <%= submit_tag("Update", class: 'btn btn-success') %>
+  <% end %>
+</div>

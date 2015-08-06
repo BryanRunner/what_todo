@@ -1,0 +1,3 @@
+<%= link_to 'New Item', new_todo_path, id: "new-item", class: 'btn btn-primary index-btn', remote: true %>
+<%= link_to 'Log Out', logout_path, id: "quit-session", class: "btn btn-danger", remote: true %>
+<span class="pull-right"><strong><%= current_user.email %></strong></span>

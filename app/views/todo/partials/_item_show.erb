@@ -1,0 +1,20 @@
+
+<ul class="list-group">
+  <li class="list-group-item">
+    <h4 class="list-group-item-heading">Title:</h4>
+    <%= @todo.title %>
+  </li>
+  <li class="list-group-item">
+    <h4 class="list-group-item-heading">Notes:</h4>
+    <%= @todo.note %>
+  </li>
+  <li class="list-group-item">
+    <h4 class="list-group-item-heading">Due:</h4>
+    <%= @todo.due_date.to_s(:due_time) %>
+  </li>
+</ul>
+  <div class="panel-footer">
+    <a class="btn btn-primary btn-back" href="javascript:void(0)">Back</a>
+    <%= link_to "Edit", edit_todo_path, id: @todo.id, class: "btn btn-info", remote: true %>
+    <%= link_to "Delete", todo_path(@todo.id), method: "delete", data: {confirm: "Delete #{@todo.title}?"}, class: "btn btn-danger", remote: true %>
+  </div>

@@ -1,0 +1,10 @@
+<div class="panel-body">
+  <h2>New Item</h2>
+  <%= bootstrap_form_for @todo, url: {action: "create"}, remote:true do |f| %>
+    <%= f.text_field :title, required: true, placeholder: "New Todo Item" %>
+    <%= f.text_area :note, required: true, placeholder: "More Information" %>
+    <%= f.datetime_local_field :due_date, required: true %>
+    <a class="btn btn-primary btn-back" href="javascript:void(0)">Cancel</a>
+    <%= submit_tag("Create", class: 'btn btn-success btn-create') %>
+  <% end %>
+</div>
